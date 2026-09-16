@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A fast weather dashboard powered by the Open-Meteo API.">
+  <title>Weatherly | Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="."><span class="brand-mark">☼</span> Weatherly</a>
+      <button class="unit-toggle" id="unitToggle" type="button" aria-label="Switch temperature unit">°C <span>/</span> °F</button>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">WEATHER DASHBOARD</p>
+        <h1>Know your weather.<br><em>Plan your day.</em></h1>
+        <p class="subtitle">Get accurate conditions and forecasts for any place on Earth.</p>
+      </div>
+      <form class="search" id="searchForm">
+        <label class="sr-only" for="searchInput">Search for a city</label>
+        <input id="searchInput" type="search" placeholder="Search city, country..." autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+      <button class="location-button" id="locationButton" type="button">⌖ Use my location</button>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <section id="weatherContent" class="weather-content" hidden>
+      <div class="location-heading">
+        <div><p class="eyebrow">CURRENT WEATHER</p><h2 id="locationName"></h2><p id="updatedAt" class="muted"></p></div>
+        <span id="weatherIcon" class="weather-icon" aria-hidden="true"></span>
+      </div>
+      <div class="current-grid">
+        <article class="current-card card">
+          <div><span id="currentTemp" class="temperature"></span><span id="currentUnit" class="large-unit">°C</span></div>
+          <p id="condition" class="condition"></p>
+          <div class="feels">Feels like <strong id="feelsLike"></strong></div>
+        </article>
+        <div class="details-grid">
+          <article class="detail card"><span>💧</span><div><small>HUMIDITY</small><strong id="humidity"></strong></div></article>
+          <article class="detail card"><span>💨</span><div><small>WIND</small><strong id="wind"></strong></div></article>
+          <article class="detail card"><span>🌡</span><div><small>PRESSURE</small><strong id="pressure"></strong></div></article>
+          <article class="detail card"><span>☀</span><div><small>UV INDEX</small><strong id="uv"></strong></div></article>
+        </div>
+      </div>
+      <div class="forecast-header"><div><p class="eyebrow">NEXT 7 DAYS</p><h2>Daily forecast</h2></div></div>
+      <div id="forecast" class="forecast-grid"></div>
+    </section>
+    <footer>Powered by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · No API key required</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

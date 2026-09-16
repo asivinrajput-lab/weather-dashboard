@@ -1,0 +1,48 @@
+:root { --ink:#152238; --muted:#748198; --blue:#3678f5; --pale:#eef4ff; --line:#e4eaf3; --shadow:0 18px 50px rgba(36,64,110,.09); }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:#f8fbff; font-family:'DM Sans',sans-serif; }
+.app-shell { max-width:1120px; min-height:100vh; margin:auto; padding:28px 34px 24px; }
+.topbar { display:flex; justify-content:space-between; align-items:center; }
+.brand { color:var(--ink); text-decoration:none; font:800 22px Manrope,sans-serif; display:flex; align-items:center; gap:9px; }
+.brand-mark { color:var(--blue); font-size:30px; line-height:20px; }
+.unit-toggle { border:0; background:white; border-radius:30px; padding:10px 16px; color:var(--ink); font-weight:700; cursor:pointer; box-shadow:0 4px 15px #dbe5f5; }
+.unit-toggle span { color:#cbd4e1; margin:0 5px; }
+.hero { margin:78px 0 42px; position:relative; }
+.eyebrow { color:var(--blue); font-size:11px; font-weight:700; letter-spacing:2px; margin:0 0 13px; }
+h1,h2 { font-family:Manrope,sans-serif; margin:0; line-height:1.12; }
+h1 { font-size:clamp(38px,6vw,66px); letter-spacing:-2.8px; }
+h1 em { color:var(--blue); font-style:normal; }
+.subtitle { color:var(--muted); font-size:16px; margin:20px 0 0; }
+.search { position:absolute; right:0; bottom:0; display:flex; background:white; padding:6px; border-radius:12px; box-shadow:var(--shadow); width:min(370px,42%); }
+.search input { border:0; outline:0; flex:1; min-width:0; padding:0 13px; color:var(--ink); font:500 14px 'DM Sans'; }
+.search button { background:var(--blue); border:0; color:#fff; padding:12px 18px; border-radius:8px; font-weight:700; cursor:pointer; }
+.location-button { margin-top:20px; border:0; background:none; color:var(--blue); font-weight:700; cursor:pointer; padding:0; }
+.status { min-height:24px; color:#e05454; font-size:14px; margin-bottom:14px; }
+.location-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+.location-heading h2 { font-size:30px; }
+.muted,.feels { color:var(--muted); font-size:13px; }
+.weather-icon { font-size:68px; }
+.current-grid { display:grid; grid-template-columns:1.15fr 1fr; gap:20px; }
+.card { background:#fff; border:1px solid #edf1f7; border-radius:18px; box-shadow:var(--shadow); }
+.current-card { padding:28px 32px; background:linear-gradient(135deg,#edf4ff,#fff); }
+.temperature { font:800 78px Manrope,sans-serif; letter-spacing:-6px; }
+.large-unit { color:var(--blue); font-size:27px; font-weight:700; vertical-align:top; margin-left:8px; }
+.condition { font-size:20px; font-weight:700; margin:8px 0 24px; }
+.feels strong { color:var(--ink); }
+.details-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.detail { padding:18px; display:flex; align-items:center; gap:13px; }
+.detail > span { font-size:22px; background:var(--pale); border-radius:10px; padding:10px; }
+.detail small { display:block; color:var(--muted); font-size:10px; letter-spacing:1px; margin-bottom:5px; }
+.detail strong { font-size:17px; }
+.forecast-header { margin:52px 0 18px; }
+.forecast-header h2 { font-size:25px; }
+.forecast-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:10px; }
+.forecast-day { text-align:center; padding:18px 8px; }
+.forecast-day:first-child { border:2px solid var(--blue); padding:16px 6px; }
+.forecast-day .day { font-weight:700; font-size:13px; }
+.forecast-day .day-icon { display:block; font-size:27px; margin:14px 0; }
+.forecast-day .temps { font-weight:700; }
+.forecast-day .low { color:#9aa7ba; margin-left:5px; font-weight:500; }
+footer { color:#a1adbd; font-size:12px; text-align:center; margin:54px 0 5px; } footer a { color:var(--blue); }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+@media (max-width:760px) { .app-shell{padding:22px 18px}.hero{margin:55px 0 30px}.search{position:static;width:100%;margin-top:25px}.current-grid{grid-template-columns:1fr}.forecast-grid{overflow-x:auto;grid-template-columns:repeat(7,100px);padding-bottom:8px}.location-heading h2{font-size:24px}.temperature{font-size:66px} }
